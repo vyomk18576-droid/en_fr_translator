@@ -607,8 +607,8 @@ model = model.to(device)
 
 ## xavier initialization is used for embedding layer
 # embedding layer and output projection layer use same set of parameters also called as weight tying.
-# normally embedding layers use normal distribution but since here weights are shared between embedding and output projection we use xavier
-# if we dont use xavier due to parameter sharing output projection layers weights explode in floating point 16 bit precision and cause logits to be NaN and gradients to be NaN
+# normally embedding layers use normal distribution for initialization but since here weights are shared between embedding and output projection we use xavier initialization
+# if we dont use xavier due to parameter sharing output projection layers weights explode in floating point 16 bit precision and cause output logits to be NaN and gradients to be NaN
 
 nn.init.xavier_uniform_(model.encoder.encoder_input_embeddings.embedding.weight)
 
@@ -625,7 +625,8 @@ params = sum(p.numel() for p in model.parameters())
 
 print(f" parameters: {params:,}")
 
-## uses label smoothing reduces overconfidence in prediction
+## uses label smoothing 
+# reduces overconfidence in prediction
 
 loss_fn = nn.CrossEntropyLoss(ignore_index=PAD_ID, label_smoothing=0.1)
 
