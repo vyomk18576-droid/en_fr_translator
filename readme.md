@@ -1,4 +1,4 @@
-# English-to-French Transformer Translator
+# English-to-French Translator
 
 A custom English-to-French machine translation model built from scratch using a PyTorch Transformer architecture. The model has been exported to ONNX for highly optimized, lightweight local inference.
 Trained using google colab on A100 gpu 
