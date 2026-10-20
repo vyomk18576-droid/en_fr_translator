@@ -608,7 +608,7 @@ model = model.to(device)
 ## xavier initialization is used for embedding layer
 # embedding layer and output projection layer use same set of parameters also called as weight tying.
 # normally embedding layers use normal distribution for initialization but since here weights are shared between embedding and output projection we use xavier initialization
-# if we dont use xavier due to parameter sharing output projection layers weights explode in floating point 16 bit precision and cause output logits to be NaN and gradients to be NaN
+# if we dont use xavier due to parameter sharing output projection layer weights explode in floating point 16 bit precision and cause output logits to be NaN and gradients to be NaN
 
 nn.init.xavier_uniform_(model.encoder.encoder_input_embeddings.embedding.weight)
 
