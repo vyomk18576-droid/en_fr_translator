@@ -682,7 +682,7 @@ def evaluate_loss(model, val_loader, loss_fn, device):
   return total_loss / len(val_loader)
 
 ## training loop
-# uses mixed precision floating point 16 optimized training
+# uses mixed precision floating point 16 bit for training
 
 scaler = torch.amp.GradScaler('cuda')
 best_val_loss = float('inf')
