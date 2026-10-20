@@ -16,10 +16,21 @@ It achieves a BLEU score of **~26**, demonstrating strong structural understandi
 **1. Clone the repository**
 ```bash
 git clone [https://github.com/vyomk18576-droid/en_fr_translator.git]
-cd en_fr_translator
+cd en_fr_translator 
+```
+
+**2. Install the dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**3. Run inference**
+```bash
+python inference.py --text "Hello, how are you?"
+```
 
 
 ## Roadmap
 - [x] Export PyTorch Transformer to ONNX format.
 - [x] Host model weights on Hugging Face and build local inference pipeline.
-- [ ] Upload the original Google Colab training source code and dataset preparation scripts.
+- [X] Upload the original Google Colab training source code and dataset preparation scripts.
